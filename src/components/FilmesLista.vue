@@ -8,11 +8,16 @@
 
       <div class="list-group list-group-flush">
 
-        <FilmesListaIten/>
-        <FilmesListaIten/>
-        <FilmesListaIten/>
-        <FilmesListaIten/>
-
+        <FilmesListaIten filmeTitulo="O Irlandês"/>
+        <FilmesListaIten filmeTitulo="Adoráveis Mulheres"/>
+        <FilmesListaIten filmeTitulo="Era Uma Vez em… Hollywood"/>
+        <FilmesListaIten filmeTitulo="Parasita"/>
+        <FilmesListaIten filmeTitulo="História de um Casamento"/>
+        <FilmesListaIten filmeTitulo="1917"/>
+        <FilmesListaIten filmeTitulo="Coringa"/>
+        <FilmesListaIten filmeTitulo="Ford vs Ferrari"/>
+        <FilmesListaIten filmeTitulo="Jojo Rabbit"/>
+        
       </div>
     </div>
 
