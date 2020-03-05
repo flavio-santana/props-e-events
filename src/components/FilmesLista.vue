@@ -8,7 +8,10 @@
 
       <div class="list-group list-group-flush">
 
-        <FilmesListaIten v-for="(filme, index) in filmes" :key="index" :filmeTitulo="filme"/>
+        <FilmesListaIten 
+          v-for="(filme, index) in filmes" 
+          :key="index" 
+          :filmeTitulo="filme"/>
 
       </div>
     </div>
