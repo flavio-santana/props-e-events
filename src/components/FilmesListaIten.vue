@@ -4,10 +4,6 @@
         <span>{{ filme.id }} || {{ filme.titulo }} || {{ filme.ano }} || {{ filme.duracao }} || {{ filme.diretor }}</span>
         <button @click="selecionar" class="btn btn-success float-right" title="Selecionar">Selecionar</button>
     </li>
-    
-    <!--
-    <input type="text" :value="titulo" :placeholder="$attrs.placeholder"> 
-    -->
 
 </template>
 <script>
