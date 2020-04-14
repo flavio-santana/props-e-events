@@ -1,7 +1,7 @@
 <template>
     
     <li class="list-group-item">
-        <span>{{ id }} || {{ filmeTituloConcatenado }} || {{ ano }}</span>
+        <span>{{ filme.id }} || {{ filme.titulo }} || {{ filme.ano }} || {{ filme.duracao }} || {{ filme.diretor }}</span>
         <button class="btn btn-success float-right" title="Editar">Editar</button>
     </li>
     
@@ -14,27 +14,10 @@
 export default{
     inheritAttrs: false,
     props: {
-        id:{
-            type: Number,
+        filme:{
+            type: Object,
             required: true,
-        },
-        titulo: {
-            type: String,
-            required: true,
-        },
-        ano: {
-            type: Number,
-            required: true,
-        },
-    },
-    computed :{
-        filmeId(){
-            return `Id : ${this.id}`
-        },
-        filmeTituloConcatenado(){
-            return `Título : ${this.titulo}`
-        },
-          
+        }
     },
     created(){
         console.log('Attrs: ' , this.$attrs)

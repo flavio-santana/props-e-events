@@ -16,8 +16,7 @@
         <FilmesListaIten 
           v-for="filme in filmes" 
           :key="filme.id" 
-          placeholder="Título do filme"
-          v-bind="filme"/>
+          :filme="filme"/>
         
       </div>
     </div>
@@ -46,11 +45,11 @@ export default {
     return {
       
       filmes : [
-        {id: 1, titulo: 'O Irlandês', ano: 2018, diretor: 'Flávio Santana'},
-        {id: 2, titulo: 'Adoráveis Mulheres', ano: 2018, diretor: 'Flávio Santana'},
-        {id: 3, titulo: 'Era Uma Vez em… Hollywood', ano: 2018, diretor: 'Flávio Santana'},
-        {id: 4, titulo: 'Pantera Negra', ano: 2018, diretor: 'Flávio Santana'},
-        {id: 5, titulo: 'DeadPool 2', ano: 2018, diretor: 'Flávio Santana'},
+        {id: 1, titulo: 'O Irlandês', ano: 2018, duracao: 180, diretor: 'Flávio Santana'},
+        {id: 2, titulo: 'Adoráveis Mulheres', ano: 2018, duracao: 280, diretor: 'Flávio Santana'},
+        {id: 3, titulo: 'Era Uma Vez em… Hollywood', ano: 2018, duracao: 360, diretor: 'Flávio Santana'},
+        {id: 4, titulo: 'Pantera Negra', ano: 2018, duracao: 158, diretor: 'Flávio Santana'},
+        {id: 5, titulo: 'DeadPool 2', ano: 2018, duracao: 177, diretor: 'Flávio Santana'},
       ]
       
     }
