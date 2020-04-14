@@ -2,7 +2,7 @@
     
     <li class="list-group-item">
         <span>{{ filme.id }} || {{ filme.titulo }} || {{ filme.ano }} || {{ filme.duracao }} || {{ filme.diretor }}</span>
-        <button class="btn btn-success float-right" title="Selecionar">Selecionar</button>
+        <button @click="selecionar" class="btn btn-success float-right" title="Selecionar">Selecionar</button>
     </li>
 
 </template>
@@ -15,6 +15,10 @@ export default{
             required: true,
         }
     },
-
+    methods: {
+        selecionar(event){
+            this.$emit('selecionarFilme', this.filme)
+        }
+    }
 }
 </script>

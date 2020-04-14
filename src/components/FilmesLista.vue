@@ -16,7 +16,8 @@
         <FilmesListaIten 
           v-for="filme in filmes" 
           :key="filme.id" 
-          :filme="filme"/>
+          :filme="filme"
+          @selecionarFilme="filmeSelecionado = $event"/>
         
       </div>
     </div>
@@ -50,7 +51,8 @@ export default {
         {id: 3, titulo: 'Era Uma Vez em… Hollywood', ano: 2018, duracao: 360, diretor: 'Flávio Santana'},
         {id: 4, titulo: 'Pantera Negra', ano: 2018, duracao: 158, diretor: 'Flávio Santana'},
         {id: 5, titulo: 'DeadPool 2', ano: 2018, duracao: 177, diretor: 'Flávio Santana'},
-      ]  
+      ],
+      filmeSelecionado: undefined  
     }
   }
 }
