@@ -1,24 +1,40 @@
 <template>
     
+    
     <li class="list-group-item">
-        <span>{{ filme.id }} || {{ filme.titulo }} || {{ filme.ano }} || {{ filme.duracao }} || {{ filme.diretor }}</span>
-        <button @click="selecionar" class="btn btn-success float-right" title="Selecionar">Selecionar</button>
+        <span>{{ filmeId }} || {{ filmeTituloConcatenado }}</span>
+        <button class="btn btn-success float-right" title="Editar">Editar</button>
     </li>
+    
+
+    <!--
+    <input type="text" :value="titulo" :placeholder="$attrs.placeholder"> 
+    -->
 
 </template>
 <script>
 export default{
     inheritAttrs: false,
     props: {
-        filme:{
-            type: Object,
+        id:{
+            type: Number,
             required: true,
-        }
+        },
+        titulo: {
+            type: String,
+            required: true,
+        },
+       
     },
-    methods:{
-        selecionar(event){
-            this.$emit('selecionarFilme',this.filme)
-        }
+    computed :{
+        filmeId(){
+            return `Id : ${this.id}`
+        },
+        filmeTituloConcatenado(){
+            return `Título : ${this.titulo}`
+        },
+          
+
     },
     created(){
         console.log('Attrs: ' , this.$attrs)

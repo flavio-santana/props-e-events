@@ -7,12 +7,12 @@
       <h2>Filmes</h2>
 
       <div class="list-group list-group-flush">
-        
+
         <FilmesListaIten 
           v-for="filme in filmes" 
           :key="filme.id" 
           :filme="filme"
-          :class="aplicarClasseAtive(filme)" 
+          :class="aplicarClasseAtiva(filme)" 
           @selecionarFilme="filmeSelecionado = $event"/>
         
       </div>
@@ -53,7 +53,7 @@ export default {
     }
   },
   methods:{
-    aplicarClasseAtive(filmeIterado){
+    aplicarClasseAtiva(filmeIterado){
       return {
         active: this.filmeSelecionado && this.filmeSelecionado.id === filmeIterado.id 
       }
