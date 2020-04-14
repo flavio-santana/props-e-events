@@ -1,6 +1,6 @@
 <template>
     <li class="list-group-item">
-        <span>{{ filmeTituloConcatenado }}</span>
+        <span>{{ filmeId }} || {{ filmeTituloConcatenado }} || {{ filmeAno }}</span>
         <button class="btn btn-success float-right" title="Editar">Editar</button>
     </li>
 </template>
@@ -8,25 +8,33 @@
 <script>
 export default{
     props: {
-        filmeTitulo: {
+        id:{
+            type: Number,
+            required: true,
+        },
+        titulo: {
             type: String,
-            //required: true,
-            //default: 'Sem dados',
-            default(){
-                return 'Sem dados'
-            },
-            validator(filmeTitulo){
-                return filmeTitulo.includes('Sem dados 2...')
-            }
+            required: true,
+        },
+        ano: {
+            type: Number,
+            required: true,
         }
     },
     computed :{
+        filmeId(){
+            return `Id : ${this.id}`
+        },
         filmeTituloConcatenado(){
-            return `Título : ${this.filmeTitulo}`
-        }
+            return `Título : ${this.titulo}`
+        },
+        filmeAno(){
+            return `Ano : ${this.ano}`
+        }       
+
     },
     created(){
-        console.log(typeof this.filmeTitulo)
+        console.log(typeof this.titulo)
     }
 }
 </script>

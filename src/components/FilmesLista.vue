@@ -8,12 +8,16 @@
 
       <div class="list-group list-group-flush">
 
-        <FilmesListaIten 
-          v-for="(filme, index) in filmes" 
-          :key="index" 
-          :filmeTitulo="filme"/>
+        <!--
+        <FilmesListaIten/>
+        -->
 
-      
+        
+        <FilmesListaIten 
+          v-for="filme in filmes" 
+          :key="filme.id" 
+          v-bind="filme"/>
+        
       </div>
     </div>
 
@@ -37,16 +41,17 @@ export default {
     FilmesListaIten,
     FilmesListaItenInfo
   },
-  data (){
+  data (){  
     return {
+      
       filmes : [
-        'O Irlandês',
-        'Adoráveis Mulheres',
-        'Era Uma Vez em… Hollywood',
-        'Parasita',
-        'Pantera Negra',
-        'DeadPool 2'
+        {id: 1, titulo: 'O Irlandês', ano: 2018},
+        {id: 2, titulo: 'Adoráveis Mulheres', ano: 2018},
+        {id: 3, titulo: 'Era Uma Vez em… Hollywood', ano: 2018},
+        {id: 4, titulo: 'Pantera Negra', ano: 2018},
+        {id: 5, titulo: 'DeadPool 2', ano: 2018},
       ]
+      
     }
   }
 }
