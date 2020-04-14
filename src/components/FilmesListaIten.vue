@@ -1,12 +1,18 @@
 <template>
+    
     <li class="list-group-item">
-        <span>{{ filmeId }} || {{ filmeTituloConcatenado }} || {{ filmeAno }}</span>
+        <span>{{ id }} || {{ filmeTituloConcatenado }} || {{ ano }}</span>
         <button class="btn btn-success float-right" title="Editar">Editar</button>
     </li>
-</template>
+    
+    <!--
+    <input type="text" :value="titulo" :placeholder="$attrs.placeholder"> 
+    -->
 
+</template>
 <script>
 export default{
+    inheritAttrs: false,
     props: {
         id:{
             type: Number,
@@ -19,7 +25,7 @@ export default{
         ano: {
             type: Number,
             required: true,
-        }
+        },
     },
     computed :{
         filmeId(){
@@ -28,13 +34,10 @@ export default{
         filmeTituloConcatenado(){
             return `Título : ${this.titulo}`
         },
-        filmeAno(){
-            return `Ano : ${this.ano}`
-        }       
-
+          
     },
     created(){
-        console.log(typeof this.titulo)
+        console.log('Attrs: ' , this.$attrs)
     }
 }
 </script>
