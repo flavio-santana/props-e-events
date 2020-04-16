@@ -9,8 +9,20 @@ Vue.config.productionTip = false
  * A utilização desse metódo é recomendada para, 
  * aplicações de pequeno e médio porte
  * 
+ * Para implementar metódos que sejam comuns em diversos components
+ * 
  */
-export const eventBus = new Vue()
+export const eventBus = new Vue({
+
+  methods:{
+    selecionarFilme(filmeSelecionado){
+
+      this.$emit('selecionarFilme', filmeSelecionado)
+    
+    }
+  }
+
+})
 
 new Vue({
   render: h => h(App),
