@@ -17,6 +17,7 @@
           v-for="filme in filmes" 
           :key="filme.id" 
           :filme="filme"
+          :class="aplicarClasseAtiva(filme)"
           @selecionarFilme="filmeSelecionado = $event"/>
         
       </div>
@@ -54,6 +55,14 @@ export default {
       ],
       filmeSelecionado: undefined  
     }
+  },
+  methods:{
+    aplicarClasseAtiva(filmeIterado){
+      return {
+        active : this.filmeSelecionado && this.filmeSelecionado.id === filmeIterado.id 
+      }
+    }
+
   }
 }
 </script>
