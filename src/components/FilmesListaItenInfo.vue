@@ -8,7 +8,7 @@
                 <h5 class="card-title">Duração: {{filme.duracao}}</h5>
                 <h5 class="card-title">Ano: {{filme.ano}}</h5>
                 <h5 class="card-title">Diretor: {{filme.diretor}}</h5>
-                <button class="btn btn-danger float-right">Editar</button>
+                <button @click="editar" class="btn btn-danger float-right">Editar</button>
             </div>
         </div>
 
@@ -30,6 +30,12 @@ export default {
         eventBus.$on('selecionarFilme', (filmeSelecionado) => {
             this.filme = filmeSelecionado
         })
+    },
+    methods:{
+        editar(event){
+            this.$emit('editarFilme',this.filme)
+        }
+
     }
 }
 </script>

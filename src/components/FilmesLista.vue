@@ -26,7 +26,14 @@
     <!-- coluna 2 -->
     <div class="col-4">
 
-      <FilmesListaItenInfo :filme="filmeSelecionado"/>
+      <FilmesListaItenInfo 
+      v-if="!editar"
+      :filme="filmeSelecionado"
+      @editarFilme="editarFilme"/>
+
+      <FilmesListaItenEditar
+      v-else
+      :filme="filmeSelecionado"/>
 
     </div>
 
@@ -36,11 +43,13 @@
 <script>
 
 import FilmesListaIten from './FilmesListaIten.vue'
+import FilmesListaItenEditar from './FilmesListaItenEditar.vue'
 import FilmesListaItenInfo from './FilmesListaItenInfo.vue'
 
 export default {
   components: {
     FilmesListaIten,
+    FilmesListaItenEditar,
     FilmesListaItenInfo
   },
   data (){  
@@ -53,7 +62,8 @@ export default {
         {id: 4, titulo: 'Pantera Negra', ano: 2018, duracao: 158, diretor: 'B'},
         {id: 5, titulo: 'DeadPool 2', ano: 2018, duracao: 177, diretor: 'A'},
       ],
-      filmeSelecionado: undefined  
+      filmeSelecionado: undefined,
+      editar: false
     }
   },
   methods:{
@@ -61,6 +71,10 @@ export default {
       return {
         active : this.filmeSelecionado && this.filmeSelecionado.id === filmeIterado.id 
       }
+    },
+    editarFilme(filme){
+      this.editar = true
+      this.filmeSelecionado = filme
     }
 
   }
