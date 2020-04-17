@@ -3,15 +3,6 @@
         <h2>Editar filme</h2>
 
         <div class="form-group">
-            <label>Id:</label>
-            <input type="number" 
-            class="form-control" 
-            placeholder="Insira o título"
-            :value="filme.id"
-            @input="filmeSelecionado = {propriedade: 'id', valor: $event.target.value}">
-        </div>
-
-        <div class="form-group">
             <label>Título:</label>
             <input type="text" 
             class="form-control" 
@@ -78,7 +69,7 @@ export default {
                 )
             },
             get(){
-                return this.filme
+                return this.filmeLocal = this.filme
             }
         }
     },

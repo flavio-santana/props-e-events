@@ -1,7 +1,7 @@
 <template>
     
     <li class="list-group-item">
-        <span>{{ filme.id }} || {{ filme.titulo }} || {{ filme.ano }} || {{ filme.duracao }} || {{ filme.diretor }}</span>
+        <span>{{ filme.titulo }} | {{ filme.ano }} | {{ filme.duracao }} | {{ filme.diretor }}</span>
         <button @click="selecionar" class="btn btn-success float-right" title="Selecionar">Selecionar</button>
     </li>
 
