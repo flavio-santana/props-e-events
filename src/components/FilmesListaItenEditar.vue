@@ -3,6 +3,15 @@
         <h2>Editar filme</h2>
 
         <div class="form-group">
+            <label>Id:</label>
+            <input type="number" 
+            class="form-control" 
+            placeholder="Insira o título"
+            :value="filme.id"
+            @input="filmeSelecionado = {propriedade: 'id', valor: $event.target.value}">
+        </div>
+
+        <div class="form-group">
             <label>Título:</label>
             <input type="text" 
             class="form-control" 
@@ -37,11 +46,16 @@
             :value="filmeSelecionado.diretor"
             @input="filmeSelecionado = {propriedade: 'diretor', valor: $event.target.value}">
         </div>
+
+        <button @click="salvarFilme" class="btn btn-primary float-right">Salvar</button>
         
     </div>
 </template>
 
 <script>
+
+import { eventBus } from './../main'
+
 export default {
     props:{
         filme:{
@@ -66,6 +80,11 @@ export default {
             get(){
                 return this.filme
             }
+        }
+    },
+    methods:{
+        salvarFilme(event){
+            eventBus.atualizarFilme(this.filmeLocal)
         }
     }
 }

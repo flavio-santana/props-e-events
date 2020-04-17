@@ -19,6 +19,9 @@ export const eventBus = new Vue({
 
       this.$emit('selecionarFilme', filmeSelecionado)
     
+    },
+    atualizarFilme(filmeAtualizado){
+      this.$emit('atualizarFilme',filmeAtualizado)
     }
   }
 
