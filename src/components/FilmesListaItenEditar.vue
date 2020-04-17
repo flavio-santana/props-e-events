@@ -7,7 +7,8 @@
             <input type="text" 
             class="form-control" 
             placeholder="Insira o título"
-            :value="filme.titulo">
+            :value="filme.titulo"
+            @input="filmeSelecionado = {propriedade: 'titulo', valor: $event.target.value}">
         </div>
 
         <div class="form-group">
@@ -15,7 +16,8 @@
             <input type="number" 
             class="form-control" 
             placeholder="Insira o tempo de duração"
-            :value="filme.duracao">
+            :value="filme.duracao"
+            @input="filmeSelecionado = {propriedade: 'duracao', valor: $event.target.value}">
         </div>
 
         <div class="form-group">
@@ -23,7 +25,8 @@
             <input type="number" 
             class="form-control" 
             placeholder="Insira o ano"
-            :value="filme.ano">
+            :value="filmeSelecionado.ano"
+            @input="filmeSelecionado = {propriedade: 'ano', valor: $event.target.value}">
         </div>
 
         <div class="form-group">
@@ -31,7 +34,8 @@
             <input type="text" 
             class="form-control" 
             placeholder="Insira o diretor"
-            :value="filme.diretor">
+            :value="filmeSelecionado.diretor"
+            @input="filmeSelecionado = {propriedade: 'diretor', valor: $event.target.value}">
         </div>
         
     </div>
@@ -43,6 +47,25 @@ export default {
         filme:{
             type: Object,
             required:true
+        }
+    },
+    data(){
+        return {
+            filmeLocal:this.filme
+        }
+    },
+    computed:{
+        filmeSelecionado:{
+            set(dados){
+                this.filmeLocal = Object.assign(
+                    {},
+                    this.filmelocal,
+                    {[dados.propriedade] : dados.valor}
+                )
+            },
+            get(){
+                return this.filme
+            }
         }
     }
 }
